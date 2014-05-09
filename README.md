@@ -14,10 +14,10 @@ After installing your prompt will look something like:
 copy the scripts to your system bin:
   `sudo cp current-git-branch pwd-last-two /usr/local/bin`
 
-add this to your `~/.bash_profile` on your Mac or `.bashrc` on your Linux machine:
+add this to your `~/.bash_profile` on your Mac or `.bashrc` on your Linux machine:  
   `PS1="\$(pwd-last-two)\$(current-git-branch)\$ "`
 
-or with color (only a little darker for the branch):
+or with color (only a little darker for the branch):  
   `PS1="\$(pwd-last-two)\\[\033[0;37m\]\$(current-git-branch)\[\033[0m\]\\$ "`
   
 # Contribute
