@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# dirs
+echo -n `dirs | awk '{
+        no_to_show=2
+
+        
+        split($0, paths, "/") # yields ["", "first-level", "second-level", ... ]
+        if ( paths[1] == "~" ) {
+            printf "~"
+        }
+        if ( length(paths) > no_to_show+1 ) {
+            printf "…"
+        }
+        start_idx = length(paths)-no_to_show+1
+        start_idx = start_idx > 1 ? start_idx : 2 # treat "/" and "/a"
+        for (i=start_idx; i <= length(paths); i++) {
+            printf "/" paths[i]
+        }
+    }'`

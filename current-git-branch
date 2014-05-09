@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+if [ "$?" = "0" ]; then
+    echo -n " ($branch)"
+else
+    echo -n ""
+fi
